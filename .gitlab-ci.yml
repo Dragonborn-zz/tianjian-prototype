@@ -1,11 +1,9 @@
 pages:
   stage: deploy
-  script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
+    # Trigger a new build and deploy only when there is a push to the
+    # below branch(es)
+    - master
